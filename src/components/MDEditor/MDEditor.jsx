@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MDEditor, { commands } from "@uiw/react-md-editor";
+import { BiHelpCircle } from "react-icons/bi";
 
 const help = {
   name: "help",
@@ -7,11 +8,11 @@ const help = {
   buttonProps: { "aria-label": "Insert help" },
   icon: (
     <svg viewBox="0 0 16 16" width="12px" height="12px">
-      {/* SVG path code */}
+      <BiHelpCircle />
     </svg>
   ),
   execute: (state, api) => {
-    window.open("https://www.javatpoint.com/cpp-vs-java", "_blank");
+    window.open("/", "_blank");
   },
 };
 
@@ -28,7 +29,25 @@ function CustomMDEditor() {
         commands={[...commands.getCommands(), help]}
         onChange={setValue}
       />
-      {/* Include additional variations of the editor as needed */}
+      <h3>Light</h3>
+      <div data-color-mode="light">
+        <MDEditor
+          height={200}
+          commands={[...commands.getCommands(), help]}
+          value={value}
+          onChange={setValue}
+        />
+      </div>
+      <h3>Dark</h3>
+      <div data-color-mode="dark">
+        <MDEditor
+          height={200}
+          commands={[...commands.getCommands(), help]}
+          value={value}
+          onChange={setValue}
+        />
+      </div>
+      {/* Include more variations as needed */}
     </div>
   );
 }
