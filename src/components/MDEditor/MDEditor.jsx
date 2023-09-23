@@ -1,25 +1,36 @@
-import React, { useState, useEffect, useRef } from "react";
-import MarkdownEditor from "@uiw/react-markdown-editor";
-import "@wcj/dark-mode";
-import "./MDEditor.css"; // Import the CSS file
+import React, { useState } from "react";
+import MDEditor, { commands } from "@uiw/react-md-editor";
 
-const code = `# hi this is working`;
+const help = {
+  name: "help",
+  keyCommand: "help",
+  buttonProps: { "aria-label": "Insert help" },
+  icon: (
+    <svg viewBox="0 0 16 16" width="12px" height="12px">
+      {/* SVG path code */}
+    </svg>
+  ),
+  execute: (state, api) => {
+    window.open("https://www.javatpoint.com/cpp-vs-java", "_blank");
+  },
+};
 
-export default function MDEditor() {
-  const [markdownVal, setMarkdownVal] = useState(code);
-  console.log("markdownVal:", markdownVal);
+function CustomMDEditor() {
+  const mkdStr = `## Markdown Editor`;
+  const [value, setValue] = useState(mkdStr);
+
   return (
     <div className="container">
-      <dark-mode light="Light" dark="Dark"></dark-mode>
       <h3>Auto</h3>
-      <div>
-        <MarkdownEditor
-          value={markdownVal}
-          onChange={(value) => {
-            setMarkdownVal(value);
-          }}
-        />
-      </div>
+      <MDEditor
+        height={200}
+        value={value}
+        commands={[...commands.getCommands(), help]}
+        onChange={setValue}
+      />
+      {/* Include additional variations of the editor as needed */}
     </div>
   );
 }
+
+export default CustomMDEditor;
