@@ -1,16 +1,19 @@
-import MarkdownEditor from "@uiw/react-markdown-editor";
-import "@wcj/dark-mode";
-import { useState } from "react";
-import "./App.css";
+// import MarkdownEditor from "@uiw/react-markdown-editor";
+// import "@wcj/dark-mode";
+// import { useState } from "react";
+// import "./App.css";
 
-const code = `#hi this is working`;
+// const code = `#hi this is working`;
+
+import Testing from "./components/MDEditor/MDEditor";
 
 export default function App() {
-  const [markdownVal, setMarkdownVal] = useState(code);
-  console.log("markdownVal:", markdownVal);
+  // const [markdownVal, setMarkdownVal] = useState(code);
+  // console.log("markdownVal:", markdownVal);
   return (
     <div>
-      <dark-mode light="Light" dark="Dark"></dark-mode>
+      <Testing />
+      {/* <dark-mode light="Light" dark="Dark"></dark-mode>
       <h3>Auto</h3>
       <div className="App">
         <MarkdownEditor
@@ -37,7 +40,7 @@ export default function App() {
             setMarkdownVal(value);
           }}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

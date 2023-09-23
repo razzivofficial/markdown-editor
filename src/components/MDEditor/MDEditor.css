@@ -1,0 +1,17 @@
+/* Testing.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Optional background color */
+}
+
+.container {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 800px; /* Optional maximum width for content */
+  background-color: #fff; /* Optional background color for the container */
+  padding: 20px; /* Optional padding for the container */
+}
