@@ -47,7 +47,6 @@ function CustomMDEditor() {
           onChange={setValue}
         />
       </div>
-      {/* Include more variations as needed */}
     </div>
   );
 }
