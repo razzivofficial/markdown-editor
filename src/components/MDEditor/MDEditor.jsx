@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MDEditor, { commands } from "@uiw/react-md-editor";
 import { BiHelpCircle } from "react-icons/bi";
-
+import "./MDEditor.css";
 const help = {
   name: "help",
   keyCommand: "help",
