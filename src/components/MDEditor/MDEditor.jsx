@@ -24,7 +24,7 @@ function CustomMDEditor() {
     <div className="container">
       <h3>Auto</h3>
       <MDEditor
-        height={300}
+        height={600}
         value={value}
         commands={[...commands.getCommands(), help]}
         onChange={setValue}
@@ -32,7 +32,7 @@ function CustomMDEditor() {
       <h3>Light</h3>
       <div data-color-mode="light">
         <MDEditor
-          height={300}
+          height={600}
           commands={[...commands.getCommands(), help]}
           value={value}
           onChange={setValue}
@@ -41,7 +41,7 @@ function CustomMDEditor() {
       <h3>Dark</h3>
       <div data-color-mode="dark">
         <MDEditor
-          height={300}
+          height={600}
           commands={[...commands.getCommands(), help]}
           value={value}
           onChange={setValue}
